@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+    --color-fb-500: #1877f2;
+    --color-insta-500: #ff0080;
+    --color-tw-500: #1da1f2;
+
+    --color-light: #f9f9f9;
+    --color-dark: #333;
+    --color-primary: #ffb700;
+    --color-primary-light: #ffc929;
+    --color-primary-dark: #e6a700;
+    --color-secondary: #00b050;
+    --color-secondary-light: #0b1a78;
+}
