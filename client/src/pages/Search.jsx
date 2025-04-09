@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Home = () => {
+const Search = () => {
   return (
     <div>
-      
+      Search Page
     </div>
   )
 }
 
-export default Home
+export default Search

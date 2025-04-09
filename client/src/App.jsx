@@ -7,11 +7,13 @@ function App() {
   
   return (
   <>
+  <div className='font-montserrat font-medium'>
     <Header/>
     <main className='flex justify-center min-h-[78vh]'>
       <Outlet />
     </main>
     <Footer/>
+  </div>
   </>
   )
 }
