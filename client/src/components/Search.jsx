@@ -20,7 +20,7 @@ const Search = () => {
     };
   return (
     <div>
-        <div className='flex items-center min-w-[300px] h-12 lg:min-w-[420px] rounded-lg border border-gray-200 p-1 overflow-hidden text-neutral-500 bg-slate-50 group focus-within:border-primary transition-all duration-200 ease-in-out'>
+        <div className='flex items-center min-w-[300px] h-11 lg:h-12 lg:min-w-[420px] rounded-lg border border-gray-200 p-1 overflow-hidden text-neutral-500 bg-slate-50 group focus-within:border-primary transition-all duration-200 ease-in-out'>
             <button className='flex items-center justify-center h-full p-3 group-focus-within:text-primary transition-all duration-200 ease-in-out'>
                 <IoSearch size={22}/>
             </button>
@@ -37,6 +37,8 @@ const Search = () => {
                                 'Search "sugar"',
                                 1000,
                                 'Search "panner"',
+                                1000,
+                                'Search "pasta"',
                                 1000
                             ]}
                             wrapper="span"
