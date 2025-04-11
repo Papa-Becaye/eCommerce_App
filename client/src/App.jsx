@@ -9,7 +9,7 @@ function App() {
   <>
   <div className='font-montserrat font-medium'>
     <Header/>
-    <main className='flex justify-center min-h-[78vh]'>
+    <main className='flex justify-center min-h-[82vh]'>
       <Outlet />
     </main>
     <Footer/>

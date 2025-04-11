@@ -4,15 +4,22 @@ import Search from './Search'
 import { Link } from 'react-router-dom'
 import { FaRegUserCircle } from "react-icons/fa";
 import useMobile from '../hooks/useMobile'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { TiShoppingCart } from "react-icons/ti";
 
 function Header() {
 
   const [isMobile] = useMobile();
   const location = useLocation();
   const isSearchPage = location.pathname === '/search';
+  const navigate = useNavigate();
+
+  const redirectToLogin = () => {
+    navigate("/login")
+  };
+
   return (
-    <header className='h-28 lg:h-20 md:shadow-md sticky top-0 bg-red-500 flex justify-center flex-col gap-1'>
+    <header className='h-28 lg:h-20 md:shadow-md sticky top-0 bg-white flex justify-center flex-col gap-1'>
       {
         !(isMobile && isSearchPage) && (
           <div className='container flex items-center mx-auto px-2 justify-between'>
@@ -34,8 +41,18 @@ function Header() {
                   <FaRegUserCircle size={25}/>
                 </button>
               </div>
-              <div className='hidden lg:block'>
-                <Link to="/login">Login</Link>
+              <div className='hidden lg:flex justify-center items-center gap-4'>
+                <button onClick={redirectToLogin} className='text-lg p-3'>Login</button>
+                <div>
+                  <button className='flex items-center justify-center text-white gap-1 bg-green-800 rounded-sm p-3 hover:bg-green-700 transition-all duration-300 ease-in-out'>
+                    <div className='animate-bounce'>
+                      <TiShoppingCart size={26}/>
+                    </div>
+                    <div className='text-semibold'>
+                      <p>My card</p>
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

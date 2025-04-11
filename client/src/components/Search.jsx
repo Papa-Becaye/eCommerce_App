@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react'
 import { IoSearch } from "react-icons/io5";
 import { TypeAnimation } from 'react-type-animation';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { IoChevronBack } from "react-icons/io5";
+import useMobile from '../hooks/useMobile';
 
 const Search = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
     const [isSearchPage, setIsSearchPage] = useState(false);
+    const [isMobile] = useMobile();
+
 
     useEffect(() => {
         const isSearch = location.pathname === '/search';
@@ -21,9 +25,19 @@ const Search = () => {
   return (
     <div>
         <div className='flex items-center min-w-[300px] h-11 lg:h-12 lg:min-w-[420px] rounded-lg border border-gray-200 p-1 overflow-hidden text-neutral-500 bg-slate-50 group focus-within:border-primary transition-all duration-200 ease-in-out'>
-            <button className='flex items-center justify-center h-full p-3 group-focus-within:text-primary transition-all duration-200 ease-in-out'>
-                <IoSearch size={22}/>
-            </button>
+            <div>
+                {
+                    (isMobile && isSearchPage) ? (
+                        <Link to='/' className='flex items-center justify-center h-full p-2 m-1 bg-white rounded-full shadow-2xs group-focus-within:text-primary transition-all duration-200 ease-in-out'>
+                            <IoChevronBack size={20}/>
+                        </Link>
+                    ) : (
+                        <button className='flex items-center justify-center h-full p-3 group-focus-within:text-primary transition-all duration-200 ease-in-out'>
+                            <IoSearch size={22}/>
+                        </button>
+                    )
+                }
+            </div>
             {
                 !isSearchPage ? (
                     <div onClick={handleSearch}>

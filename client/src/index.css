@@ -17,3 +17,24 @@
     /* Fonts */
     --font-montserrat: 'Montserrat';
 }
+
+@layer base {
+    html, body {
+        font-family: var(--font-montserrat);
+        color: var(--color-dark);
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+    }
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+body {
+    @apply bg-blue-50;
+}
