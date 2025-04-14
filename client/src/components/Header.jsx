@@ -19,7 +19,7 @@ function Header() {
   };
 
   return (
-    <header className='h-28 lg:h-20 md:shadow-md sticky top-0 bg-white flex justify-center flex-col gap-1'>
+    <header className='h-28 lg:h-20 md:shadow-md sticky backdrop-blur top-0 bg-white/30 flex justify-center flex-col gap-1'>
       {
         !(isMobile && isSearchPage) && (
           <div className='container flex items-center mx-auto px-2 justify-between'>

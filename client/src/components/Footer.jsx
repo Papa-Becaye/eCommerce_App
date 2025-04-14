@@ -1,27 +1,119 @@
-import React from 'react'
-import { FaFacebook } from 'react-icons/fa'
-import { FaInstagram } from 'react-icons/fa'
-import { FaLinkedin } from 'react-icons/fa'
+import React from "react";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import logo from '../assets/logo.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className='flex pt-3 justify-center h-20 bg-green-900 text-white'>
-      <div className='container gap-3 mx-auto text-center lg:flex-row lg:justify-between lg:px-2 flex flex-col w-full h-full'>
-        <p className='flex justify-center items-center'>© 2025 Binkeyit. All rights reserved.</p>
-        <div className='flex text-2xl justify-center items-center ml-4'>
-          <a href='#'>
-            <FaFacebook className='ml-4 hover:text-primary' />
-          </a>
-          <a href='#'>
-            <FaInstagram className='ml-4 hover:text-primary' />
-          </a>
-          <a href='#'>
-            <FaLinkedin className='ml-4 hover:text-primary' />
-          </a>
+    <>
+      <footer className="bg-white dark:bg-gray-900">
+        <div className="mx-auto w-full container p-4 py-6 lg:py-8">
+          <div className="md:flex md:justify-between">
+            <div className="mb-6 md:mb-0">
+              <Link to="/" className='h-full flex items-center justify-center'>
+                <img src={logo} alt="Logo" width={170} height={60} className='logo hidden lg:block'/>
+                <img src={logo} alt="Logo" width={120} height={60} className='logo lg:hidden'/>
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                  Resources
+                </h2>
+                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Binkeyit
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://tailwindcss.com/" className="hover:underline">
+                      Tailwind CSS
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                  Follow us
+                </h2>
+                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                  <li className="mb-4">
+                    <a
+                      href="https://github.com/themesberg/flowbite"
+                      className="hover:underline "
+                    >
+                      Github
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://discord.gg/4eeurUVvTy"
+                      className="hover:underline"
+                    >
+                      Discord
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                  Legal
+                </h2>
+                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="hover:underline">
+                      Terms &amp; Conditions
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <div className="sm:flex sm:items-center sm:justify-between">
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+              © 2025{" "}
+              <Link to={'/'} className="hover:underline">
+              Binkeyit™
+              </Link>
+              . All Rights Reserved.
+            </span>
+            <div className="flex mt-4 sm:justify-center sm:mt-0">
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              >
+                <FaFacebook size={18} />
+                <span className="sr-only">Facebook page</span>
+              </a>
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              >
+                <FaInstagram size={18} />
+                <span className="sr-only">Instagram page</span>
+              </a>
+              <a
+                href="#"
+                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              >
+                <FaLinkedin size={18} />
+                <span className="sr-only">LinkedIn page</span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
-  )
-}
+      </footer>
+    </>
+  );
+};
 
-export default Footer
+export default Footer;

@@ -64,7 +64,7 @@ const Register = () => {
 
   return (
     <section className='w-full container mx-auto px-2'>
-        <div className='bg-white rounded-md p-7 my-4 max-w-lg mx-auto w-full grid gap-4'>
+        <div className='bg-white rounded-md p-7 my-4 max-w-lg mx-auto w-full grid gap-4 border border-gray-200'>
             <div className='md:text-2xl text-center text-gray-700'>
                 <h1>Create your account</h1>
             </div>
@@ -106,9 +106,9 @@ const Register = () => {
                         <div className='cursor-pointer pr-2  group-focus-within:text-primary transition-all duration-200 ease-in-out' onClick={() => setShowPassword(prev => !prev)}>
                             {
                                 showPassword ? (
-                                    <IoIosEye size={22}/>
-                                ) : (
                                     <IoIosEyeOff size={22}/>
+                                ) : (
+                                    <IoIosEye size={22}/>
                                 )
                             }
                         </div>
@@ -128,9 +128,9 @@ const Register = () => {
                         <div className='cursor-pointer pr-2  group-focus-within:text-primary transition-all duration-200 ease-in-out' onClick={() => setShowConfirmPassword(prev => !prev)}>
                             {
                                 showConfirmPassword ? (
-                                    <IoIosEye size={22}/>
-                                ) : (
                                     <IoIosEyeOff size={22}/>
+                                ) : (
+                                    <IoIosEye size={22}/>
                                 )
                             }
                         </div>

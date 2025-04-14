@@ -27,7 +27,6 @@
         font-weight: 700;
     }
     a {
-        color: var(--color-primary);
         text-decoration: none;
     }
     a:hover {
@@ -36,5 +35,5 @@
 }
 
 body {
-    @apply bg-blue-50;
+    @apply bg-amber-50;
 }
