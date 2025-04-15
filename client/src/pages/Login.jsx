@@ -54,7 +54,7 @@ const Login = () => {
 
   return (
     <section className='w-full container mx-auto px-2'>
-        <div className='bg-white rounded-md p-7 my-4 max-w-lg mx-auto w-full grid gap-4 border border-gray-200'>
+        <div className='bg-white dark:bg-gray-900 dark:border-gray-700 rounded-md p-7 my-4 max-w-lg mx-auto w-full grid gap-4 border border-gray-200'>
             <div className='md:text-2xl text-center text-gray-700'>
                 <h1>Login to your account</h1>
             </div>

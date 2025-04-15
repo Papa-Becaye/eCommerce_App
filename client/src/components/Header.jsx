@@ -19,7 +19,7 @@ function Header() {
   };
 
   return (
-    <header className='h-28 lg:h-20 md:shadow-md sticky backdrop-blur top-0 bg-white/30 flex justify-center flex-col gap-1'>
+    <header className='h-28 lg:h-20 md:shadow-md sticky backdrop-blur top-0 bg-white/30 flex justify-center flex-col gap-1 dark:bg-gray-900/30 border-b border-gray-200/30'>
       {
         !(isMobile && isSearchPage) && (
           <div className='container flex items-center mx-auto px-2 justify-between'>
@@ -42,7 +42,7 @@ function Header() {
                 </button>
               </div>
               <div className='hidden lg:flex justify-center items-center gap-4'>
-                <button onClick={redirectToLogin} className='text-lg p-3'>Login</button>
+                <button onClick={redirectToLogin} className='px-3 text-gray-500 hover:text-gray-800 cursor-pointer transition-all duration-200 ease-in-out'>Log in</button>
                 <div>
                   <button className='flex items-center justify-center text-white gap-1 bg-green-800 rounded-sm p-3 hover:bg-green-700 transition-all duration-300 ease-in-out'>
                     <div className='animate-bounce'>
