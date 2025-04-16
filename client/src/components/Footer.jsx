@@ -3,12 +3,21 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import logo from '../assets/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import useMobile from '../hooks/useMobile';
 
 const Footer = () => {
+  const location = useLocation();
+  const [isMobile] = useMobile();
+  const isHidden = ((location.pathname === '/login'
+    || location.pathname === '/register'
+    || location.pathname === '/forgot-password'
+    || location.pathname === '/reset-password'
+    || location.pathname === '/verify-email'
+  ) && !isMobile);
   return (
     <>
-      <footer className="bg-white dark:bg-gray-900">
+      <footer className={`${(isHidden) ? 'hidden' : 'flex'} bg-gray-900`}>
         <div className="mx-auto w-full container p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">

@@ -70,7 +70,7 @@ const Register = () => {
             </div>
             <form className='grid gap-4' onSubmit={handleSubmit}>
                 <div className='grid gap-1'> 
-                    <label htmlFor="name">Name</label>
+                    <label htmlFor="name" className='required'>Name</label>
                     <input type="text"
                         id='name'
                         name ='name'
@@ -82,7 +82,7 @@ const Register = () => {
                     />
                 </div>
                 <div className='grid gap-1'>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" className='required'>Email</label>
                     <input type="email"
                         id='email'
                         name ='email'
@@ -93,7 +93,7 @@ const Register = () => {
                     />
                 </div>
                 <div className='grid gap-1'>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password" className='required'>Password</label>
                     <div className='flex items-center justify-between bg-slate-50 border border-gray-200 rounded-md gap-2 overflow-hidden group focus-within:border-primary transition-all duration-200 ease-in-out'>
                         <input type={!showPassword ? "password" : "text"}
                             id='password'
@@ -115,7 +115,7 @@ const Register = () => {
                     </div>
                 </div>
                 <div className='grid gap-1'>
-                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <label htmlFor="confirmPassword" className='required'>Confirm Password</label>
                     <div className='flex items-center justify-between bg-slate-50 border border-gray-200 rounded-md gap-2 overflow-hidden group focus-within:border-primary transition-all duration-200 ease-in-out'>
                         <input type={!showConfirmPassword ? "password" : "text"}
                             id='confirmPassword'

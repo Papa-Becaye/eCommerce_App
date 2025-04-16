@@ -6,7 +6,7 @@ import Axios from '../utils/Axios';
 import summaryApi from '../common/SummaryApi';
 import AxiosToastError from '../utils/AxiosToastError';
 import { Link, useNavigate } from 'react-router-dom';
-
+import imgLogin from '../assets/imgLogin.svg';
 
 const Login = () => {
     const [data, setData] = useState({
@@ -39,6 +39,8 @@ const Login = () => {
                 return;
             }
             toast.success(res.data.message)
+            localStorage.setItem("accessToken", res.data.data.token);
+            localStorage.setItem("refreshToken", res.data.data.refreshToken);
             setData({
                 email: "",
                 password: "",
@@ -55,12 +57,15 @@ const Login = () => {
   return (
     <section className='w-full container mx-auto px-2'>
         <div className='bg-white rounded-md p-7 my-4 max-w-lg mx-auto w-full grid gap-4 border border-gray-200'>
+            <div className='hidden lg:flex h-50 items-center justify-center p-3'>
+                <img src={imgLogin} alt="login_img" className='h-full' />
+            </div>
             <div className='md:text-2xl text-center text-gray-700'>
                 <h1>Login to your account</h1>
             </div>
             <form className='grid gap-4' onSubmit={handleSubmit}>
                 <div className='grid gap-1'>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" className='required'>Email</label>
                     <input type="email"
                         id='email'
                         name ='email'
@@ -71,7 +76,7 @@ const Login = () => {
                     />
                 </div>
                 <div className='grid gap-1'>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password" className='required'>Password</label>
                     <div className='flex items-center justify-between bg-slate-50 border border-gray-200 rounded-md gap-2 overflow-hidden group focus-within:border-primary transition-all duration-200 ease-in-out'>
                         <input type={!showPassword ? "password" : "text"}
                             id='password'

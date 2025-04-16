@@ -12,6 +12,12 @@ function Header() {
   const [isMobile] = useMobile();
   const location = useLocation();
   const isSearchPage = location.pathname === '/search';
+  const isHidden = ((location.pathname === '/login'
+    || location.pathname === '/register'
+    || location.pathname === '/forgot-password'
+    || location.pathname === '/reset-password'
+    || location.pathname === '/verify-email'
+  ) && !isMobile);
   const navigate = useNavigate();
 
   const redirectToLogin = () => {
@@ -19,7 +25,7 @@ function Header() {
   };
 
   return (
-    <header className='h-28 lg:h-20 md:shadow-md sticky backdrop-blur top-0 bg-white/30 flex justify-center flex-col gap-1'>
+    <header className={`${(isHidden) ? 'hidden' : 'flex'} h-28 lg:h-20 md:shadow-md sticky backdrop-blur top-0 bg-white/30 justify-center flex-col gap-1`}>
       {
         !(isMobile && isSearchPage) && (
           <div className='container flex items-center mx-auto px-2 justify-between'>
@@ -42,7 +48,7 @@ function Header() {
                 </button>
               </div>
               <div className='hidden lg:flex justify-center items-center gap-4'>
-                <button onClick={redirectToLogin} className='text-lg p-3'>Login</button>
+                <button onClick={redirectToLogin} className='text-neutral-600 border border-gray-200 rounded-md p-3 cursor-pointer font-semibold hover:text-gray-900 transition-all duration-200 ease-in-out'>Log in</button>
                 <div>
                   <button className='flex items-center justify-center text-white gap-1 bg-green-800 rounded-sm p-3 hover:bg-green-700 transition-all duration-300 ease-in-out'>
                     <div className='animate-bounce'>

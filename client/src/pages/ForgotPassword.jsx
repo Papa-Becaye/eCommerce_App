@@ -4,6 +4,7 @@ import Axios from '../utils/Axios';
 import summaryApi from '../common/SummaryApi';
 import AxiosToastError from '../utils/AxiosToastError';
 import { Link, useNavigate } from 'react-router-dom';
+import forgotPasswordImg from '../assets/forgot_password_ia.svg';
 
 
 const ForgotPassword = () => {
@@ -51,12 +52,15 @@ const ForgotPassword = () => {
   return (
     <section className='w-full container mx-auto px-2'>
         <div className='bg-white rounded-md p-7 my-4 max-w-lg mx-auto w-full grid gap-4 border border-gray-200'>
+            <div className='hidden lg:flex h-50 items-center justify-center p-3'>
+                <img src={forgotPasswordImg} alt="forgot_password_img" className='h-full' />
+            </div>
             <div className='md:text-2xl text-center text-gray-700'>
                 <h1>Verify your identity</h1>
             </div>
             <form className='grid gap-4' onSubmit={handleSubmit}>
                 <div className='grid gap-1'>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" className='required'>Email</label>
                     <input type="email"
                         id='email'
                         name ='email'

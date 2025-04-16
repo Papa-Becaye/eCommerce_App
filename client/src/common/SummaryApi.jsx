@@ -20,6 +20,10 @@ const summaryApi = {
         method: 'PUT',
         url: '/api/user/reset-password',
     },
+    refreshToken: {
+        method: 'POST',
+        url: '/api/user/refresh-token',
+    },
 }
 
 export default summaryApi;
