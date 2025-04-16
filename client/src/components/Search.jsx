@@ -24,7 +24,7 @@ const Search = () => {
     };
   return (
     <div>
-        <div className='flex items-center min-w-[300px] h-11 lg:h-12 lg:min-w-[420px] rounded-lg border border-gray-200 p-1 overflow-hidden text-neutral-500 bg-slate-50 group focus-within:border-primary transition-all duration-200 ease-in-out'>
+        <div className='flex items-center min-w-[300px] h-11 lg:h-12 lg:min-w-[420px] rounded-lg dark:border-gray-200/30 border border-gray-200 p-1 overflow-hidden text-neutral-500 dark:bg-slate-800 dark:text-gray-400 bg-slate-50 group focus-within:border-primary transition-all duration-200 ease-in-out'>
             <div>
                 {
                     (isMobile && isSearchPage) ? (
