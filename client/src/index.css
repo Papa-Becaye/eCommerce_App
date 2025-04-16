@@ -39,5 +39,5 @@
 }
 
 body {
-    @apply bg-light dark:bg-gray-900;
+    @apply bg-amber-50;
 }
