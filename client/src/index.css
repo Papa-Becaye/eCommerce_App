@@ -27,14 +27,17 @@
         font-weight: 700;
     }
     a {
-        color: var(--color-primary);
         text-decoration: none;
     }
     a:hover {
         text-decoration: underline;
     }
+    .required::after {
+        content: ' *';
+        color: var(--color-primary);
+    }
 }
 
 body {
-    @apply bg-blue-50;
+    @apply bg-amber-50;
 }
