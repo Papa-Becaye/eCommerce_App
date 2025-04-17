@@ -167,6 +167,11 @@ export async function loginUserController(req, res) {
 
         res.cookie('AccessToken', token, cookiesOptions);
         res.cookie('RefreshToken', refreshToken, cookiesOptions);
+
+        const updateUser = await UserModel.findByIdAndUpdate(user._id, { 
+            refresh_token: refreshToken,
+            last_login_date: new Date().toISOString()
+        });
         return res.json(
         {
             message: "user logged in successfully",
@@ -378,7 +383,12 @@ export async function verifyOtpController(req, res) {
                 success: false
             });
         }
-        
+
+        const updatedUser = await UserModel.findByIdAndUpdate( user._id , { 
+            forgot_password_otp: "",
+            forgot_password_expiry: ""
+        });
+
         return res.json(
         {
             message: "otp verified successfully",
@@ -489,6 +499,36 @@ export async function refreshTokenController(req, res) {
             }
         });
 
+    } catch (error) {
+        return res.status(500).json(
+        { 
+            message: error.message || error,
+            error: true,
+            success: false
+        });
+    }
+}
+
+export async function getUserDetailsController(req, res) {
+    try {
+        const userId = req.userId;
+        console.log(userId);
+        const user = await UserModel.findById(userId).select("-password -refresh_token -__v -createdAt -updatedAt");
+        if (!user) {
+            return res.status(400).json(
+            { 
+                message: "user not found",
+                error: true,
+                success: false
+            });
+        }
+        return res.json(
+        {
+            message: "user details fetched successfully",
+            error: false,
+            success: true,
+            data: user
+        });
     } catch (error) {
         return res.status(500).json(
         { 

@@ -30,9 +30,6 @@
     a {
         text-decoration: none;
     }
-    a:hover {
-        text-decoration: underline;
-    }
     .required::after {
         content: ' *';
         color: var(--color-primary);

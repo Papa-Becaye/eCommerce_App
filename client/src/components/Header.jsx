@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import logo from '../assets/logo.png'
 import Search from './Search'
-import { Link } from 'react-router-dom'
 import { FaRegUserCircle } from "react-icons/fa";
 import useMobile from '../hooks/useMobile'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 import { TiShoppingCart } from "react-icons/ti";
+import { useSelector } from 'react-redux';
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import UserMenu from './UserMenu';
 
 function Header() {
 
@@ -19,6 +21,8 @@ function Header() {
     || location.pathname === '/verify-email'
   ) && !isMobile);
   const navigate = useNavigate();
+  const user = useSelector((state) => state?.user);
+  const [isOpenMenuUser, setIsOpenMenuUser] = useState(false);
 
   const redirectToLogin = () => {
     navigate("/login")
@@ -43,12 +47,27 @@ function Header() {
             {/* Login and my card */}
             <div>
               <div>
-                <button className='lg:hidden flex items-center justify-center text-neutral-600'>
+                <Link to={'/login'} className='lg:hidden flex items-center justify-center text-neutral-600'>
                   <FaRegUserCircle size={25}/>
-                </button>
+                </Link>
               </div>
               <div className='hidden lg:flex justify-center items-center gap-4'>
-                <button onClick={redirectToLogin} className='text-neutral-600 border border-gray-200 rounded-md p-3 cursor-pointer font-semibold hover:text-gray-900 transition-all duration-200 ease-in-out'>Log in</button>
+              {
+                user?._id ? (
+                  <div className='relative'>
+                    <div className='flex items-center justify-center gap-2 text-neutral-600 p-3 cursor-pointer font-semibold hover:text-gray-900 transition-all duration-200 ease-in-out'>
+                      <p>Account</p>
+                      <span>
+                        <MdArrowDropDown size={25} className='text-neutral-600'/>
+                      </span>
+                    </div>
+                    <div>
+                    <UserMenu/>
+                    </div>
+                  </div>
+                ) : (
+                  <button onClick={redirectToLogin} className='text-neutral-600 border border-gray-200 rounded-md p-3 cursor-pointer font-semibold hover:text-gray-900 transition-all duration-200 ease-in-out'>Log in</button>
+                )}
                 <div>
                   <button className='flex items-center justify-center text-white gap-1 bg-green-800 rounded-sm p-3 hover:bg-green-700 transition-all duration-300 ease-in-out'>
                     <div className='animate-bounce'>
