@@ -28,10 +28,10 @@ const Footer = () => {
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-6 text-sm font-semibold uppercase text-white">
                   Resources
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className=" text-gray-400 font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
                       Binkeyit
@@ -45,10 +45,10 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-6 text-sm font-semibold uppercase text-white">
                   Follow us
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className=" text-gray-400 font-medium">
                   <li className="mb-4">
                     <a
                       href="https://github.com/themesberg/flowbite"
@@ -68,10 +68,10 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-6 text-sm font-semibold uppercase text-white">
                   Legal
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className="text-gray-400 font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
                       Privacy Policy
@@ -86,36 +86,33 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            <span className="text-sm sm:text-center text-gray-400">
               © 2025{" "}
               <Link to={'/'} className="hover:underline">
               Binkeyit™
               </Link>
               . All Rights Reserved.
             </span>
-            <div className="flex mt-4 sm:justify-center sm:mt-0">
+            <div className="flex mt-4 sm:justify-center sm:items-center sm:mt-0">
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                className="text-gray-500 hover:text-white"
               >
                 <FaFacebook size={18} />
-                <span className="sr-only">Facebook page</span>
               </a>
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                className="text-gray-500 hover:text-white ms-5"
               >
                 <FaInstagram size={18} />
-                <span className="sr-only">Instagram page</span>
               </a>
               <a
                 href="#"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+                className="text-gray-500 hover:text-white ms-5"
               >
                 <FaLinkedin size={18} />
-                <span className="sr-only">LinkedIn page</span>
               </a>
             </div>
           </div>

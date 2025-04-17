@@ -25,6 +25,7 @@
     }
     h1, h2, h3, h4, h5, h6 {
         font-weight: 700;
+        color: var(--color-dark);
     }
     a {
         text-decoration: none;
@@ -36,8 +37,25 @@
         content: ' *';
         color: var(--color-primary);
     }
+    .backdrop-blur-custom{
+        background-image: url('./assets/images/african-females-shopping-online-while-sitting-cafe.jpg');
+    }
+    .backdrop-blur-custom::before {
+        content: '';
+        @apply backdrop-blur-sm;
+        z-index: -1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    .backdrop-blur-custom {
+        @apply bg-cover bg-center backdrop-blur min-h-screen
+    }
 }
 
 body {
-    @apply bg-amber-50;
+    @apply bg-light;
 }

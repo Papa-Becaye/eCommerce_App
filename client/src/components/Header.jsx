@@ -25,7 +25,7 @@ function Header() {
   };
 
   return (
-    <header className={`${(isHidden) ? 'hidden' : 'flex'} h-28 lg:h-20 md:shadow-md sticky backdrop-blur top-0 bg-white/30 justify-center flex-col gap-1`}>
+    <header className={`${(isHidden) ? 'hidden' : 'flex'} h-28 lg:h-20 md:shadow-md sticky backdrop-blur top-0 justify-center flex-col gap-1 bg-white/30 z-10`}>
       {
         !(isMobile && isSearchPage) && (
           <div className='container flex items-center mx-auto px-2 justify-between'>

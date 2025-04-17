@@ -6,6 +6,7 @@ import Axios from '../utils/Axios';
 import summaryApi from '../common/SummaryApi';
 import AxiosToastError from '../utils/AxiosToastError';
 import { Link, useNavigate } from 'react-router-dom';
+import binkeyitSignUp from '../assets/binkeyit_sign-up.svg';
 
 
 const Register = () => {
@@ -63,8 +64,11 @@ const Register = () => {
     }
 
   return (
-    <section className='w-full container mx-auto px-2'>
+    <section className='w-full backdrop-blur-custom mx-auto px-2'>
         <div className='bg-white rounded-md p-7 my-4 max-w-lg mx-auto w-full grid gap-4 border border-gray-200'>
+            <div className='hidden lg:flex h-50 items-center justify-center p-3'>
+                <img src={binkeyitSignUp} alt="binkeyit_sign-up" className='h-full' />
+            </div>
             <div className='md:text-2xl text-center text-gray-700'>
                 <h1>Create your account</h1>
             </div>
