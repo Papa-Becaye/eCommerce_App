@@ -33,10 +33,24 @@ export const userSlice = createSlice({
         state.orderHistory = action.payload?.orderHistory;
         state.role = action.payload?.role;
       },
+      logout: (state) => {
+        state._id = '';
+        state.name = '';
+        state.email = '';
+        state.avatar = '';
+        state.mobile = '';
+        state.verify_email = false;
+        state.last_login_date = '';
+        state.status = false;
+        state.address_details = [];
+        state.shopping_cart = [];
+        state.orderHistory = [];
+        state.role = '';
+      },
     },
   })
   
   // Action creators are generated for each case reducer function
-  export const { setUserDetails } = userSlice.actions;
+  export const { setUserDetails, logout } = userSlice.actions;
   
   export default userSlice.reducer;

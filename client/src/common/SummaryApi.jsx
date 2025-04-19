@@ -28,6 +28,10 @@ const summaryApi = {
         method: 'GET',
         url: '/api/user/user-details',
     },
+    logout: {
+        method: 'GET',
+        url: '/api/user/logout',
+    },
 }
 
 export default summaryApi;

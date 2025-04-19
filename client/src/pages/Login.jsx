@@ -7,6 +7,9 @@ import summaryApi from '../common/SummaryApi';
 import AxiosToastError from '../utils/AxiosToastError';
 import { Link, useNavigate } from 'react-router-dom';
 import imgLogin from '../assets/imgLogin.svg';
+import fetchUserDetails from '../utils/fetchUserDetails';
+import { useDispatch } from 'react-redux';
+import { setUserDetails } from '../store/userSlice';
 
 const Login = () => {
     const [data, setData] = useState({
@@ -16,7 +19,14 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const validValue = Object.values(data).every((item) => item.length > 0);
     const navigate = useNavigate();
-    
+    const dispatch = useDispatch();
+    const userDetails = async() => {
+        const userDetails = await fetchUserDetails();
+        if(userDetails) {
+            dispatch(setUserDetails(userDetails));
+        }
+    }
+
     const handleChange = (e) => {
         const {name, value} = e.target;
 
@@ -47,6 +57,7 @@ const Login = () => {
             })
             setShowPassword(false);
             setTimeout(() => {
+                userDetails();
                 navigate('/')
             }, 2000)
         }catch (error) {

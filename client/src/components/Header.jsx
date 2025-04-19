@@ -23,6 +23,17 @@ function Header() {
   const navigate = useNavigate();
   const user = useSelector((state) => state?.user);
   const [isOpenMenuUser, setIsOpenMenuUser] = useState(false);
+  const handleClickMenuUser = () => {
+    setIsOpenMenuUser(!isOpenMenuUser);
+  };
+
+  const handleMenuUserMobile = () => {
+    if (isMobile && user?._id) {
+      navigate("/user-menu-mobile")
+      return;
+    }
+    navigate("/login")
+  }
 
   const redirectToLogin = () => {
     navigate("/login")
@@ -47,22 +58,24 @@ function Header() {
             {/* Login and my card */}
             <div>
               <div>
-                <Link to={'/login'} className='lg:hidden flex items-center justify-center text-neutral-600'>
+                <button onClick={handleMenuUserMobile} className='lg:hidden flex items-center justify-center text-neutral-600'>
                   <FaRegUserCircle size={25}/>
-                </Link>
+                </button>
               </div>
               <div className='hidden lg:flex justify-center items-center gap-4'>
               {
                 user?._id ? (
                   <div className='relative'>
-                    <div className='flex items-center justify-center gap-2 text-neutral-600 p-3 cursor-pointer font-semibold hover:text-gray-900 transition-all duration-200 ease-in-out'>
+                    <div onClick={handleClickMenuUser} className='flex items-center justify-center gap-2 text-neutral-600 p-3 cursor-pointer font-semibold hover:text-gray-900 transition-all duration-200 ease-in-out'>
                       <p>Account</p>
                       <span>
-                        <MdArrowDropDown size={25} className='text-neutral-600'/>
+                        {isOpenMenuUser ? <MdArrowDropUp size={25} className='text-neutral-600'/> : <MdArrowDropDown size={25} className='text-neutral-600'/>}
                       </span>
                     </div>
-                    <div>
-                    <UserMenu/>
+                    <div className={`${isOpenMenuUser ? 'block' : 'hidden'}`}>
+                      <div className='absolute top-12 right-0 bg-white/30 backdrop-blur-2xl shadow-md rounded-md p-2 min-w-50 border border-gray-200 z-10'>
+                        <UserMenu/>
+                      </div>
                     </div>
                   </div>
                 ) : (
