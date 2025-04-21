@@ -8,6 +8,7 @@ import ForgotPassword from "../pages/ForgotPassword";
 import OtpVerification from "../pages/OtpVerification";
 import ResetPassword from "../pages/ResetPassword";
 import UserMenuMobile from "../pages/UserMenuMobile";
+import Orders from "../pages/Orders";
 
 export const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
             {
                 path: "/user-menu-mobile",
                 Component: UserMenuMobile,
+            },
+            {
+                path: "/orders",
+                Component: Orders,
             },
         ]
     },

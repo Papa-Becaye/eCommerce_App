@@ -57,7 +57,7 @@ const UserMenu = () => {
             </Link>
         </div>
         <div className='flex items-center justify-between gap-2 p-2 hover:bg-gray-100 rounded-md cursor-pointer transition-all duration-200 ease-in-out'>
-            <Link to={'/orders'} className='text-neutral-600 font-semibold flex justify-center gap-2'>
+            <Link to={'/save-address'} className='text-neutral-600 font-semibold flex justify-center gap-2'>
                 <TbLocationHeart size={22} className='text-neutral-600'/>
                 Save address
             </Link>
